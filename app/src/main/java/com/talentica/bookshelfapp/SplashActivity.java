@@ -27,13 +27,13 @@ public class SplashActivity extends AppCompatActivity {
             decorView.setSystemUiVisibility(uiOptions);
         }
 
-        //        displayLoginPage();
+        displayLoginPage();
 
     }
 
-    private void displayLoginPage(){
-//        Intent intent = new Intent(ctx, LoginActivity.class);
-//        startActivity(intent);
-//        finish();
+    private void displayLoginPage() {
+        Intent intent = new Intent(ctx, LoginActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

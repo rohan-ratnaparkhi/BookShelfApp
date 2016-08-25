@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.talentica.bookshelfapp.LoginActivity">
+
+    <com.talentica.bookshelfapp.widgets.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:textSize="@dimen/text_size_40"
+        android:textColor="@color/app_title_color"
+        font:typeface="@string/font_light"
+        android:layout_marginBottom="20dp"/>
+
+    <com.talentica.bookshelfapp.widgets.CustomEditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_login_edit_text"
+        android:id="@+id/et_login_email"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="1dp"
+        android:paddingLeft="20dp"
+        android:inputType="textEmailAddress"
+        android:background="@drawable/custom_edit_text"
+        android:textColorHint="@color/hint_color"
+        android:textColor="@color/edit_text_color"
+        android:hint="@string/hint_email"
+        font:typeface="@string/font_regular"/>
+
+    <com.talentica.bookshelfapp.widgets.CustomEditText
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height_login_edit_text"
+        android:inputType="textPassword"
+        android:id="@+id/et_login_password"
+        android:layout_below="@+id/et_login_email"
+        android:paddingLeft="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/custom_edit_text"
+        android:textColorHint="@color/hint_color"
+        android:textColor="@color/edit_text_color"
+        android:hint="@string/hint_password"
+        font:typeface="@string/font_regular"/>
+
+    <com.talentica.bookshelfapp.widgets.CustomButton
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/btn_text_sign_in"
+        android:id="@+id/btn_login_sign_in"
+        android:textSize="@dimen/text_size_16"
+        android:layout_below="@+id/et_login_password"
+        android:textColor="@color/white"
+        android:background="@color/green"
+        android:layout_centerHorizontal="true"
+        font:typeface="@string/font_regular"/>
+
+    <com.talentica.bookshelfapp.widgets.CustomButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_text_forgot_password"
+        android:id="@+id/btn_login_forgot_password"
+        android:layout_below="@+id/btn_login_sign_in"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        font:typeface="@string/font_regular"
+        android:textSize="@dimen/text_size_14"
+        android:textColor="@color/hint_color"
+        android:background="@color/transparent"
+        android:layout_alignParentTop="false"
+        android:gravity="top" />
+
+    <com.talentica.bookshelfapp.widgets.CustomButton
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:text="@string/btn_text_sign_up"
+        android:id="@+id/btn_login_sign_up"
+        font:typeface="@string/font_regular"
+        android:textSize="@dimen/text_size_16"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/grey"
+        android:background="@color/transparent"/>
+</RelativeLayout>

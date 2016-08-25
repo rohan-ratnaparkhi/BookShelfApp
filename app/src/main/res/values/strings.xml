@@ -1,3 +1,92 @@
 <resources>
-    <string name="app_name">BookShelfApp</string>
+    <string name="app_name">BookShelf</string>
+
+    <!-- file names -->
+    <string name="user_profile">com.talentica.rohan.bookshelfapp</string>
+
+    <!-- activity labels -->
+    <string name="act_forgot_password">Forgot Password</string>
+    <string name="act_sign_up">Forgot Password</string>
+    <string name="act_book_details">Book Details</string>
+
+    <!-- fonts -->
+    <string name="font_light">font/Roboto-Light.ttf</string>
+    <string name="font_regular">font/Roboto-Regular.ttf</string>
+    <string name="font_medium">font/Roboto-Medium.ttf</string>
+    <string name="font_bold">font/Roboto-Bold.ttf</string>
+
+    <!-- hints -->
+    <string name="hint_email">Email ID</string>
+    <string name="hint_password">Password</string>
+    <string name="hint_forgot_pwd_email">Enter your email ID</string>
+    <string name="hint_enter_email">Enter email ID</string>
+    <string name="hint_enter_password">Enter Password</string>
+
+    <!-- text for buttons -->
+    <string name="btn_text_sign_in">Sign in</string>
+    <string name="btn_text_sign_up">Sign Up</string>
+    <string name="btn_text_send_email">Send Email</string>
+    <string name="btn_text_forgot_password">Forgot Password</string>
+    <string name="btn_text_borrow">I Want to Borrow</string>
+
+    <!-- general texts -->
+    <string name="forgot_password_text">We will send a link on your registered \n email to reset your password</string>
+    <string name="publisher">Publisher : </string>
+    <string name="isbn13">ISBN13 : </string>
+    <string name="isbn10">ISBN10 : </string>
+    <string name="edition">Edition : </string>
+    <string name="list_price">List Price : </string>
+    <string name="tags">Tags</string>
+    <string name="book_owner_comment">Book Owner Comment</string>
+    <string name="add_search_book">Search Book</string>
+    <string name="step_1_of_2">Step 1/2</string>
+    <string name="add_book_search_text">Search Book Name, Author, ISBN Number</string>
+    <string name="or">OR</string>
+    <string name="add_book_manually">Enter Details Manually</string>
+    <string name="add_details_manually">Add Details Manually</string>
+    <string name="book_image">Book Image</string>
+    <string name="book_image_recommendations">Dimension 110px * 150px \n(Max size 50mb)</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_home_page">HomePageActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="book_name">Book Name</string>
+    <string name="enter_title">Enter Title</string>
+    <string name="mandatory_field"> *</string>
+    <string name="book_author">Author</string>
+    <string name="enter_author">Author Name</string>
+    <string name="book_isbn">ISBN Number</string>
+    <string name="enter_isbn13">Enter 13 Digit Number</string>
+    <string name="enter_isbn10">Enter 10 Digit Number</string>
+    <string name="enter_publisher">Enter Publisher Name</string>
+    <string name="book_price">Book Price (INR)</string>
+    <string name="book_binding">Binding</string>
+    <string name="just_publisher">Publisher</string>
+    <string name="book_condition">Book Condition</string>
+    <string name="book_tags">Tags</string>
+    <string name="add_tags">Add tags separated by comma</string>
+    <string name="book_genre">Genre</string>
+    <string name="comment">Comments</string>
+    <string name="select">Select</string>
+    <string name="enter_comments">Add brief view about book</string>
+    <string name="title_activity_new_main">NewMainActivity</string>
+    <string name="t_science_fiction">Science Fiction</string>
+    <string name="condition_new">New</string>
+    <string name="condition_good">Good</string>
+    <string name="condition_poor">Poor</string>
+    <string name="recently_added_title">Recently Added</string>
+    <string name="most_read_title">Most Read</string>
+    <string name="view_all"><![CDATA[View All >]]></string>
+    <string name="text_binding">Binding :&#160;</string>
+    <string name="text_condition">Condition :&#160;</string>
+    <string name="text_genre">Genre :&#160;</string>
+    <string name="text_published">Published :&#160;</string>
+    <string name="snack_error_bg">#de6d5d</string>
+    <string name="snack_success_bg">#00be7d</string>
 </resources>
