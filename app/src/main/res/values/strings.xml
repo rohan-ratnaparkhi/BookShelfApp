@@ -89,4 +89,5 @@
     <string name="text_published">Published :&#160;</string>
     <string name="snack_error_bg">#de6d5d</string>
     <string name="snack_success_bg">#00be7d</string>
+    <string name="invalid_login_msg"><![CDATA[Please enter valid username & password]]></string>
 </resources>
