@@ -15,28 +15,22 @@ import org.json.JSONObject;
 public class StoredUser {
 
     static String ClassTag = "StoredUser";
-    public static void storeUser(Context ctx, String response, String username, String pwd){
+
+    public static void storeUser(Context ctx, User user) {
         SharedPreferences sharedPref = ctx.getSharedPreferences(ctx.getString(R.string.user_profile), Context.MODE_PRIVATE);
         JSONObject res = null;
-        try {
-            res = new JSONObject(response);
-            String uToken = res.getString("data");
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putString(Constants.USER_TOKEN, uToken);
-            editor.putString(Constants.KEY_USERNAME, username);
-            editor.putString(Constants.KEY_PASSWORD, pwd);
-            editor.commit();
-            Log.d("Rohan", "User stored successfully");
-        } catch (JSONException e) {
-            Log.d(Constants.APP_TAG, "inside " + ClassTag + " error: " + e.getMessage());
-        }
-
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString(Constants.USER_TOKEN, user.getUserToken());
+        editor.putString(Constants.KEY_EMAIL, user.getUserEmail());
+        editor.putString(Constants.KEY_PASSWORD, user.getUserPassword());
+        editor.commit();
+        Log.d("Rohan", "User stored successfully");
     }
 
-    public static User getStoredUser(Context ctx){
+    public static User getStoredUser(Context ctx) {
         User user = new User();
         SharedPreferences sharedPref = ctx.getSharedPreferences(ctx.getString(R.string.user_profile), Context.MODE_PRIVATE);
-        user.setUserName(sharedPref.getString(Constants.KEY_USERNAME, ""));
+        user.setUserEmail(sharedPref.getString(Constants.KEY_EMAIL, ""));
         user.setUserPassword(sharedPref.getString(Constants.KEY_PASSWORD, ""));
         return user;
     }

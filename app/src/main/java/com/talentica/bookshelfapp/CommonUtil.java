@@ -13,4 +13,9 @@ public class CommonUtil {
 //        TODO - password validation
         return true;
     }
+
+    public static boolean isSuccessResponse(String response) {
+//        TODO - check if response is Ok
+        return true;
+    }
 }

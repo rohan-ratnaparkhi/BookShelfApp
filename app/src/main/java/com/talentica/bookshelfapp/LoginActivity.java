@@ -31,7 +31,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     Button mBtnSignIn, mBtnSignUp, mBtnForgotPassword;
     EditText mEtEmailId, mEtPassword;
     Context ctx;
-    SharedPreferences sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +59,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mBtnSignUp.setOnClickListener(this);
         mBtnForgotPassword.setOnClickListener(this);
 
-        initializeSharedPreferences();
         checkForStoredUserAndLogin();
     }
 
@@ -81,8 +79,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 checkUserLogin();
                 break;
             case R.id.act_login_btn_sign_up:
-//                Intent showSignUpForm = new Intent(ctx, SignUpActivity.class);
-//                startActivity(showSignUpForm);
+                Intent signUpForm = new Intent(ctx, SignUpActivity.class);
+                startActivity(signUpForm);
                 break;
         }
     }
@@ -101,8 +99,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(ctx, response, Toast.LENGTH_LONG).show();
-                        if(isSuccessResponse(response)){
-                            StoredUser.storeUser(ctx, response, username, pwd);
+                        if(CommonUtil.isSuccessResponse(response)){
+                            try {
+                                JSONObject res = new JSONObject(response);
+                                User user = new User();
+                                user.setUserEmail(mEtEmailId.getText().toString());
+                                user.setUserPassword(mEtPassword.getText().toString());
+                                user.setUserToken(res.getString("data"));
+                                StoredUser.storeUser(ctx, user);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
                             //                            displayHomePage();
                         } else {
                             Toast.makeText(ctx, "Some error occurred", Toast.LENGTH_LONG).show();
@@ -130,20 +138,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         requestQueue.add(stringRequest);
     }
 
-    private boolean isSuccessResponse(String response){
-        //TODO - validate if response is as per expectation or not
-        return true;
-    }
-
     private void checkForStoredUserAndLogin(){
         User user = StoredUser.getStoredUser(ctx);
-        mEtEmailId.setText(user.getUserName());
+        mEtEmailId.setText(user.getUserEmail());
         mEtPassword.setText(user.getUserPassword());
         checkUserLogin();
     }
 
-    private void initializeSharedPreferences() {
-        sharedPref = getSharedPreferences(getString(R.string.user_profile), Context.MODE_PRIVATE);
-    }
+
 
 }

@@ -90,4 +90,8 @@
     <string name="snack_error_bg">#de6d5d</string>
     <string name="snack_success_bg">#00be7d</string>
     <string name="invalid_login_msg"><![CDATA[Please enter valid username & password]]></string>
+    <string name="label_name_field">Name</string>
+    <string name="label_email">Email ID</string>
+    <string name="hint_name">Full Name</string>
+    <string name="label_password">Password</string>
 </resources>
