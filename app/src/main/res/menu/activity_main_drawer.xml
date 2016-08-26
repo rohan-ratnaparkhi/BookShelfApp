@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/book_categories"
+        android:title="Categories">
+        <menu>
+            <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/genre_Science_Fiction"
+                    android:title="Science Fiction" />
+                <item
+                    android:id="@+id/genre_Satire"
+                    android:title="Satire" />
+                <item
+                    android:id="@+id/genre_Drama"
+                    android:title="Drama" />
+                <item
+                    android:id="@+id/genre_Action_and_Adventure"
+                    android:title="Action and Adventure" />
+                <item
+                    android:id="@+id/genre_Romance"
+                    android:title="Romance" />
+                <item
+                    android:id="@+id/genre_Mystery"
+                    android:title="Mystery" />
+                <item
+                    android:id="@+id/genre_Horror"
+                    android:title="Horror" />
+                <item
+                    android:id="@+id/genre_Self_help"
+                    android:title="Self help" />
+                <item
+                    android:id="@+id/genre_Health"
+                    android:title="Health" />
+                <item
+                    android:id="@+id/genre_Guide"
+                    android:title="Guide" />
+                <item
+                    android:id="@+id/genre_Travel"
+                    android:title="Travel" />
+                <item
+                    android:id="@+id/genre_Children"
+                    android:title="Children" />
+                <item
+                    android:id="@+id/genre_Religion_Spirituality_New_Age"
+                    android:title="Religion, Spirituality &amp; New Age" />
+                <item
+                    android:id="@+id/genre_Science"
+                    android:title="Science" />
+                <item
+                    android:id="@+id/genre_History"
+                    android:title="History" />
+                <item
+                    android:id="@+id/genre_Math"
+                    android:title="Math" />
+                <item
+                    android:id="@+id/genre_Anthology"
+                    android:title="Anthology" />
+                <item
+                    android:id="@+id/genre_Poetry"
+                    android:title="Poetry" />
+                <item
+                    android:id="@+id/genre_Encyclopedias"
+                    android:title="Encyclopedias" />
+                <item
+                    android:id="@+id/genre_Dictionaries"
+                    android:title="Dictionaries" />
+                <item
+                    android:id="@+id/genre_Comics"
+                    android:title="Comics" />
+                <item
+                    android:id="@+id/genre_Art"
+                    android:title="Art" />
+                <item
+                    android:id="@+id/genre_Cookbooks"
+                    android:title="Cookbooks" />
+                <item
+                    android:id="@+id/genre_Diaries"
+                    android:title="Diaries" />
+                <item
+                    android:id="@+id/genre_Journals"
+                    android:title="Journals" />
+                <item
+                    android:id="@+id/genre_Prayer_books"
+                    android:title="Prayer books" />
+                <item
+                    android:id="@+id/genre_Series"
+                    android:title="Series" />
+                <item
+                    android:id="@+id/genre_Trilogy"
+                    android:title="Trilogy" />
+                <item
+                    android:id="@+id/genre_Biographies"
+                    android:title="Biographies" />
+                <item
+                    android:id="@+id/genre_Autobiographies"
+                    android:title="Autobiographies" />
+                <item
+                    android:id="@+id/genre_Fantasy"
+                    android:title="Fantasy" />
+
+            </group>
+        </menu>
+    </item>
+
+</menu>

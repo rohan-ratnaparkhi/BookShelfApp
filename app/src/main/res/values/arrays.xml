@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="book_binding_options">
+        <item>Audiobook</item>
+        <item>Board Book</item>
+        <item>Bound</item>
+        <item>Bundle</item>
+        <item>Hardcover</item>
+        <item>Loose Leaf</item>
+        <item>Paperback</item>
+        <item>Pocket Book</item>
+    </string-array>
+
+    <string-array name="book_genre_options">
+        <item>Science fiction</item>
+        <item>Satire</item>
+        <item>Drama</item>
+        <item>Action and Adventure</item>
+        <item>Romance</item>
+        <item>Mystery</item>
+        <item>Horror</item>
+        <item>Self help</item>
+        <item>Health</item>
+        <item>Guide</item>
+        <item>Travel</item>
+        <item>Children</item>
+        <item>Religion, Spirituality &amp; New Age</item>
+        <item>Science</item>
+        <item>History</item>
+        <item>Math</item>
+        <item>Anthology</item>
+        <item>Poetry</item>
+        <item>Encyclopedias</item>
+        <item>Dictionaries</item>
+        <item>Comics</item>
+        <item>Art</item>
+        <item>Cookbooks</item>
+        <item>Diaries</item>
+        <item>Journals</item>
+        <item>Prayer books</item>
+        <item>Series</item>
+        <item>Trilogy</item>
+        <item>Biographies</item>
+        <item>Autobiographies</item>
+        <item>Fantasy</item>
+    </string-array>
+</resources>

@@ -91,7 +91,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         final String username = mEtEmailId.getText().toString().trim();
         final String pwd = mEtPassword.getText().toString();
 
-        if(!(CommonUtil.isEmailValid(username) && CommonUtil.isPasswordValid(pwd))) {
+        if (!(CommonUtil.isEmailValid(username) && CommonUtil.isPasswordValid(pwd))) {
             CommonUtil.displayErrorMsg(ctx, Constants.INVALID_CREDENTIALS);
             return;
         }
@@ -101,7 +101,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onResponse(String response) {
                         Toast.makeText(ctx, response, Toast.LENGTH_LONG).show();
-                        if(CommonUtil.isSuccessResponse(response)){
+                        if (CommonUtil.isSuccessResponse(response)) {
                             try {
                                 JSONObject res = new JSONObject(response);
                                 User user = new User();
@@ -113,7 +113,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 e.printStackTrace();
                             }
 
-                            //                            displayHomePage();
+                            displayHomePage();
                         } else {
                             CommonUtil.displayErrorMsg(ctx, Constants.ERROR_OCCURRED);
                         }
@@ -128,7 +128,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 }) {
             @Override
             protected Map<String, String> getParams() {
-                Map<String,String> params = new HashMap<String, String>();
+                Map<String, String> params = new HashMap<String, String>();
                 params.put(Constants.KEY_USERNAME, username);
                 params.put(Constants.KEY_PASSWORD, pwd);
                 return params;
@@ -139,13 +139,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         requestQueue.add(stringRequest);
     }
 
-    private void checkForStoredUserAndLogin(){
+    private void checkForStoredUserAndLogin() {
         User user = StoredUser.getStoredUser(ctx);
         mEtEmailId.setText(user.getUserEmail());
         mEtPassword.setText(user.getUserPassword());
         checkUserLogin();
     }
 
-
+    private void displayHomePage(){
+        Intent homePage = new Intent(ctx, MainActivity.class);
+        startActivity(homePage);
+    }
 
 }
