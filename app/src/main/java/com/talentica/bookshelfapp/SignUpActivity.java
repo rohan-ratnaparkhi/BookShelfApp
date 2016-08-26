@@ -117,6 +117,6 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void displaySignUpError(){
-        Toast.makeText(ctx, Constants.ERROR_OCCURRED, Toast.LENGTH_LONG).show();
+        CommonUtil.displayErrorMsg(ctx, Constants.ERROR_OCCURRED);
     }
 }

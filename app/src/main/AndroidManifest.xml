@@ -26,6 +26,9 @@
         <activity
             android:name=".SignUpActivity"
             android:label="@string/act_sign_up"
+            android:parentActivityName=".LoginActivity" />
+        <activity android:name=".ForgotPasswordActivity"
+            android:label="@string/act_forgot_password"
             android:parentActivityName=".LoginActivity"></activity>
     </application>
 

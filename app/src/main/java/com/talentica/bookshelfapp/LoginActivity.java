@@ -59,12 +59,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         mBtnSignUp.setOnClickListener(this);
         mBtnForgotPassword.setOnClickListener(this);
 
-        checkForStoredUserAndLogin();
+//        TODO - check if this is needed
+//        checkForStoredUserAndLogin();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
+//        TODO - check for logout and login loop
         checkForStoredUserAndLogin();
     }
 
@@ -72,8 +74,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.act_login_btn_forgot_password:
-//                Intent showForgotPassword = new Intent(ctx, ForgotPasswordActivity.class);
-//                startActivity(showForgotPassword);
+                Intent showForgotPassword = new Intent(ctx, ForgotPasswordActivity.class);
+                startActivity(showForgotPassword);
                 break;
             case R.id.act_login_btn_sign_in:
                 checkUserLogin();
@@ -90,7 +92,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         final String pwd = mEtPassword.getText().toString();
 
         if(!(CommonUtil.isEmailValid(username) && CommonUtil.isPasswordValid(pwd))) {
-            Toast.makeText(ctx, getString(R.string.invalid_login_msg), Toast.LENGTH_LONG).show();
+            CommonUtil.displayErrorMsg(ctx, Constants.INVALID_CREDENTIALS);
             return;
         }
 
@@ -113,7 +115,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                             //                            displayHomePage();
                         } else {
-                            Toast.makeText(ctx, "Some error occurred", Toast.LENGTH_LONG).show();
+                            CommonUtil.displayErrorMsg(ctx, Constants.ERROR_OCCURRED);
                         }
 
                     }
@@ -121,8 +123,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ctx, "Some error occurred here", Toast.LENGTH_LONG).show();
-//                        displayLoginError();
+                        CommonUtil.displayErrorMsg(ctx, Constants.ERROR_OCCURRED);
                     }
                 }) {
             @Override

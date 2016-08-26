@@ -1,5 +1,8 @@
 package com.talentica.bookshelfapp;
 
+import android.content.Context;
+import android.widget.Toast;
+
 /**
  * Created by rohanr on 8/26/16.
  */
@@ -18,4 +21,13 @@ public class CommonUtil {
 //        TODO - check if response is Ok
         return true;
     }
+
+    public static void displayErrorMsg(Context ctx, String errMsg){
+        Toast.makeText(ctx, errMsg, Toast.LENGTH_LONG).show();
+    }
+
+    public static void displaySuccessMsg(Context ctx, String errMsg){
+        Toast.makeText(ctx, errMsg, Toast.LENGTH_LONG).show();
+    }
+
 }
