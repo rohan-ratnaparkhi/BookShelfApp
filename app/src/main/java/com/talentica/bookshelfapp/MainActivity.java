@@ -13,6 +13,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 
 
 public class MainActivity extends AppCompatActivity
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity
     ImageButton mToolbarAdd;
     ImageButton mToolbarNotification;
     ImageButton mToolbarProfile;
+    LinearLayout mMainContainer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
+        mMainContainer = (LinearLayout) findViewById(R.id.act_main_container);
         mToolbarHome = (ImageButton) findViewById(R.id.toolbar_home);
         mToolbarTodo = (ImageButton) findViewById(R.id.toolbar_todo);
         mToolbarAdd = (ImageButton) findViewById(R.id.toolbar_add);
@@ -114,10 +118,10 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View view) {
         resetToolbarIconsToDefault();
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.toolbar_home:
                 mToolbarHome.setImageResource(R.drawable.ic_home_select);
-//                displayHome();
+                displayHome();
                 break;
             case R.id.toolbar_todo:
                 mToolbarTodo.setImageResource(R.drawable.ic_todo_select);
@@ -141,5 +145,10 @@ public class MainActivity extends AppCompatActivity
         mToolbarAdd.setImageResource(R.drawable.ic_add);
         mToolbarNotification.setImageResource(R.drawable.ic_notification);
         mToolbarProfile.setImageResource(R.drawable.ic_profile);
+    }
+
+    private void displayHome() {
+        BookListsFragment bookLists = new BookListsFragment();
+        getSupportFragmentManager().beginTransaction().add(R.id.act_main_container, bookLists, Constants.BOOK_LISTS).commit();
     }
 }

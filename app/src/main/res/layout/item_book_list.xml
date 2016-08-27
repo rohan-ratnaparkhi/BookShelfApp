@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="5dp">
+
+    <ImageView
+        android:id="@+id/item_home_list_img"
+        android:layout_width="100dp"
+        android:layout_height="120dp"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/hint_color" />
+
+    <com.talentica.bookshelfapp.widgets.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Title"
+        android:textColor="@color/normal_grey_text"
+        android:textSize="@dimen/text_size_14"
+        android:id="@+id/item_home_list_title"
+        font:typeface="@string/font_bold" />
+
+    <com.talentica.bookshelfapp.widgets.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Author"
+        android:textColor="@color/normal_grey_text"
+        android:textSize="@dimen/text_size_12"
+        font:typeface="@string/font_regular"
+        android:id="@+id/item_home_list_author"/>
+
+    <com.talentica.bookshelfapp.widgets.CustomTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="Lender"
+        android:id="@+id/item_home_list_lender"
+        android:textColor="@color/hint_color"
+        android:textSize="@dimen/text_size_12"
+        font:typeface="@string/font_regular" />
+
+</LinearLayout>

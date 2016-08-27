@@ -4,7 +4,7 @@
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorAccent">#ffffff</color>
     <color name="red">#ff0000</color>
-    <color name="light_grey">#e6e6e6</color>
+    <color name="background_color">#e6e6e6</color>
     <color name="app_title_color">#2a2d35</color>
     <color name="hint_color">#999999</color>
     <color name="edit_text_color">#2a2d35</color>

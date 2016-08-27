@@ -32,6 +32,7 @@ public class StoredUser {
         SharedPreferences sharedPref = ctx.getSharedPreferences(ctx.getString(R.string.user_profile), Context.MODE_PRIVATE);
         user.setUserEmail(sharedPref.getString(Constants.KEY_EMAIL, ""));
         user.setUserPassword(sharedPref.getString(Constants.KEY_PASSWORD, ""));
+        user.setUserToken(sharedPref.getString(Constants.USER_TOKEN, ""));
         return user;
     }
 }

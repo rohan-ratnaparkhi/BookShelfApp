@@ -38,4 +38,6 @@ public class Constants {
     public static final String USER_NOT_FOUND = "User not found.";
 
     public static final String APP_TAG = "Rohan";
+    public static final String BOOK_LISTS = "HomeBooksLists";
+    public static final String TEMP_BOOK_IMG = "https://s-media-cache-ak0.pinimg.com/564x/94/89/8f/94898f9328ac1b44d8545818abbffd23.jpg";
 }
