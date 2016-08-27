@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
+import com.talentica.bookshelfapp.BookDetailsActivity;
 import com.talentica.bookshelfapp.Constants;
 import com.talentica.bookshelfapp.R;
 import com.talentica.bookshelfapp.model.Book;
@@ -71,9 +72,9 @@ public class BookListAdapter extends RecyclerView.Adapter<BookListAdapter.MyView
         @Override
         public void onClick(View v) {
             int pos = getAdapterPosition();
-//            Intent intent = new Intent(c, BookDetailsActivity.class);
-//            intent.putExtra("bookId", bookList.get(pos).getBookId());
-//            c.startActivity(intent);
+            Intent intent = new Intent(ctx, BookDetailsActivity.class);
+            intent.putExtra("bookId", bookList.get(pos).getBookId());
+            ctx.startActivity(intent);
             Log.d(Constants.APP_TAG, "an item clicked at pos: " + pos);
         }
     }

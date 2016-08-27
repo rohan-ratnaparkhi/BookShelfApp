@@ -27,18 +27,19 @@
         <activity
             android:name=".SignUpActivity"
             android:label="@string/act_sign_up"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".LoginActivity" />
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ForgotPasswordActivity"
             android:label="@string/act_forgot_password"
-            android:screenOrientation="portrait"
-            android:parentActivityName=".LoginActivity" />
+            android:parentActivityName=".LoginActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".MainActivity"
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".BookDetailsActivity"></activity>
     </application>
 
 </manifest>

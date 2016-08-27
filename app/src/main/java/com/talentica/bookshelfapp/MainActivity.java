@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity
         mToolbarNotification.setOnClickListener(this);
         mToolbarProfile.setOnClickListener(this);
 
+        displayHome();
+
     }
 
     @Override
@@ -106,7 +108,6 @@ public class MainActivity extends AppCompatActivity
         resetToolbarIconsToDefault();
         switch (view.getId()) {
             case R.id.toolbar_home:
-                mToolbarHome.setImageResource(R.drawable.ic_home_select);
                 displayHome();
                 break;
             case R.id.toolbar_todo:
@@ -134,6 +135,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void displayHome() {
+        mToolbarHome.setImageResource(R.drawable.ic_home_select);
         BookListsFragment bookLists = new BookListsFragment();
         getSupportFragmentManager().beginTransaction().add(R.id.act_main_container, bookLists, Constants.BOOK_LISTS).commit();
     }

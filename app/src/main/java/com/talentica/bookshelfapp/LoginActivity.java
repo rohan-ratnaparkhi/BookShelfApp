@@ -100,7 +100,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        Toast.makeText(ctx, response, Toast.LENGTH_LONG).show();
+//                        Toast.makeText(ctx, response, Toast.LENGTH_LONG).show();
                         if (CommonUtil.isSuccessResponse(response)) {
                             try {
                                 JSONObject res = new JSONObject(response);

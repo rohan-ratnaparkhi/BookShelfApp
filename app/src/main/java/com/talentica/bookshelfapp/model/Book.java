@@ -10,6 +10,7 @@ public class Book {
     private String lenderName;
     private String bookImageUrl;
 
+
     public String getBookImageUrl() {
         return bookImageUrl;
     }
