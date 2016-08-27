@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/steps_1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/background_color"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <com.talentica.bookshelfapp.widgets.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:hint="@string/add_search_book"
+            android:paddingLeft="@dimen/margin_10"
+            android:textColor="@color/normal_grey_text"
+            android:textSize="@dimen/text_size_14"
+            font:typeface="@string/font_medium" />
+
+        <com.talentica.bookshelfapp.widgets.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:paddingRight="@dimen/margin_10"
+            android:text="@string/step_1_of_2"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/text_size_12"
+            font:typeface="@string/font_regular" />
+    </LinearLayout>
+
+    <com.talentica.bookshelfapp.widgets.CustomEditText
+        android:id="@+id/add_book_search_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/steps_1"
+        android:layout_marginLeft="@dimen/margin_12"
+        android:layout_marginRight="@dimen/margin_12"
+        android:layout_marginTop="@dimen/margin_20"
+        android:background="@drawable/custom_edit_text"
+        android:drawableLeft="@drawable/ic_search"
+        android:drawablePadding="@dimen/margin_10"
+        android:padding="8dp"
+        android:text="@string/add_book_search_text"
+        android:textColor="@color/hint_color"
+        android:textSize="@dimen/text_size_14"
+        font:typeface="@string/font_regular" />
+
+    <com.talentica.bookshelfapp.widgets.CustomTextView
+        android:id="@+id/text_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/add_book_search_box"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:text="@string/or"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/text_size_12"
+        font:typeface="@string/font_regular" />
+
+    <com.talentica.bookshelfapp.widgets.CustomButton
+        android:id="@+id/frg_add_book_btn_manually"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_or"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="@dimen/margin_12"
+        android:layout_marginRight="@dimen/margin_12"
+        android:background="@color/green"
+        android:text="@string/add_book_manually"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_16"
+        font:typeface="@string/font_regular" />
+
+</RelativeLayout>

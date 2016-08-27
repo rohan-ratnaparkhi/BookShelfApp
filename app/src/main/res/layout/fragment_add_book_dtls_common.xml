@@ -1,0 +1,175 @@
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_10"
+    android:layout_marginTop="@dimen/margin_5"
+    android:elevation="@dimen/card_elevation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginRight="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_12"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.talentica.bookshelfapp.widgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/book_condition"
+                android:textColor="@color/normal_grey_text"
+                android:textSize="@dimen/text_size_14"
+                font:typeface="@string/font_regular" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_2"
+                android:text="@string/mandatory_field"
+                android:textColor="@color/red" />
+        </LinearLayout>
+
+        <RadioGroup
+            android:id="@+id/frg_add_book_common_rg_condition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/frg_add_book_common_rb_new"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:button="@android:color/transparent"
+                android:drawableLeft="@drawable/custom_radio_button"
+                android:drawablePadding="@dimen/radio_drawable_padding"
+                android:text="@string/condition_new" />
+
+            <RadioButton
+                android:id="@+id/frg_add_book_common_rb_good"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/radio_button_margin"
+                android:button="@android:color/transparent"
+                android:drawableLeft="@drawable/custom_radio_button"
+                android:drawablePadding="@dimen/radio_drawable_padding"
+                android:text="@string/condition_good" />
+
+            <RadioButton
+                android:id="@+id/frg_add_book_common_rb_poor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/radio_button_margin"
+                android:button="@android:color/transparent"
+                android:drawableLeft="@drawable/custom_radio_button"
+                android:drawablePadding="@dimen/radio_drawable_padding"
+                android:text="@string/condition_poor" />
+        </RadioGroup>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:orientation="horizontal">
+
+            <com.talentica.bookshelfapp.widgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/book_tags"
+                android:textColor="@color/normal_grey_text"
+                android:textSize="@dimen/text_size_14"
+                font:typeface="@string/font_regular" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_2"
+                android:text="@string/mandatory_field"
+                android:textColor="@color/red" />
+        </LinearLayout>
+
+        <com.talentica.bookshelfapp.widgets.CustomEditText
+            android:id="@+id/frg_add_book_common_et_tags"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/height_login_edit_text"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@drawable/custom_edit_text"
+            android:hint="@string/add_tags"
+            android:paddingLeft="@dimen/padding_10"
+            android:textColor="@color/edit_text_color"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/text_size_14"
+            font:typeface="@string/font_regular" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:orientation="horizontal">
+
+            <com.talentica.bookshelfapp.widgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/book_genre"
+                android:textColor="@color/normal_grey_text"
+                android:textSize="@dimen/text_size_14"
+                font:typeface="@string/font_regular" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/padding_2"
+                android:text="@string/mandatory_field"
+                android:textColor="@color/red" />
+        </LinearLayout>
+
+        <!-- Rohan need to change to custom spinner -->
+        <Spinner
+            android:id="@+id/frg_add_book_common_spn_genre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        </Spinner>
+
+
+        <com.talentica.bookshelfapp.widgets.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_20"
+            android:text="@string/comment"
+            android:textColor="@color/normal_grey_text"
+            android:textSize="@dimen/text_size_14"
+            font:typeface="@string/font_regular" />
+
+        <!-- Rohan change this to custom text area -->
+        <com.talentica.bookshelfapp.widgets.CustomEditText
+            android:id="@+id/frg_add_book_common_et_comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/margin_20"
+            android:layout_marginTop="@dimen/margin_10"
+            android:background="@drawable/custom_edit_text"
+            android:gravity="top"
+            android:hint="@string/enter_comments"
+            android:inputType="textMultiLine"
+            android:lines="5"
+            android:paddingLeft="@dimen/padding_10"
+            android:paddingTop="@dimen/margin_10"
+            android:scrollbars="vertical"
+            android:singleLine="false"
+            android:textColor="@color/edit_text_color"
+            android:textColorHint="@color/hint_color"
+            android:textSize="@dimen/text_size_14"
+            font:typeface="@string/font_regular" />
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+

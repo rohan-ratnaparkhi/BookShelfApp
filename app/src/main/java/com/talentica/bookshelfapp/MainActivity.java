@@ -123,7 +123,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.toolbar_add:
                 mToolbarAdd.setImageResource(R.drawable.ic_add_select);
-//                displayAddBook();
+                displayAddBook();
                 break;
             case R.id.toolbar_notification:
                 mToolbarNotification.setImageResource(R.drawable.ic_notification_select);
@@ -132,6 +132,11 @@ public class MainActivity extends AppCompatActivity
                 mToolbarProfile.setImageResource(R.drawable.ic_profile_select);
                 break;
         }
+    }
+
+    private void displayAddBook() {
+        AddBookMainFragment addBookMainFrg = new AddBookMainFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, addBookMainFrg, Constants.ADD_BOOK_MAIN_FRAGMENT).commit();
     }
 
     void resetToolbarIconsToDefault() {

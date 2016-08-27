@@ -39,7 +39,11 @@
             android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".BookDetailsActivity"
+        <activity
+            android:name=".BookDetailsActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AddBookDetailsManuallyActivity"
             android:parentActivityName=".MainActivity"></activity>
     </application>
 
