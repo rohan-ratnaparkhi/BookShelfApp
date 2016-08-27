@@ -123,6 +123,7 @@ public class BookDetailsActivity extends AppCompatActivity implements View.OnCli
     }
 
     private void displayBookDetails(JSONObject response) {
+//        TODO - displaying of remaining fields
         try {
             JSONObject data = response.getJSONObject("data");
             mTvIsbn10.setText(data.getString("isbn10"));

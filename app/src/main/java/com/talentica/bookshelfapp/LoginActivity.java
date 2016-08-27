@@ -100,7 +100,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-//                        Toast.makeText(ctx, response, Toast.LENGTH_LONG).show();
                         if (CommonUtil.isSuccessResponse(response)) {
                             try {
                                 JSONObject res = new JSONObject(response);
@@ -112,7 +111,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-
                             displayHomePage();
                         } else {
                             CommonUtil.displayErrorMsg(ctx, Constants.ERROR_OCCURRED);
@@ -145,9 +143,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         checkUserLogin();
     }
 
-    private void displayHomePage(){
+    private void displayHomePage() {
         Intent homePage = new Intent(ctx, MainActivity.class);
         startActivity(homePage);
+        finish();
     }
 
 }

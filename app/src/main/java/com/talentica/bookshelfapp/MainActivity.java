@@ -3,6 +3,7 @@ package com.talentica.bookshelfapp;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -25,7 +26,6 @@ public class MainActivity extends AppCompatActivity
     ImageButton mToolbarNotification;
     ImageButton mToolbarProfile;
     LinearLayout mMainContainer;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -98,9 +98,17 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Log.d(Constants.APP_TAG, "item: " + id);
+        displayBooksForCategory(item);
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    private void displayBooksForCategory(MenuItem item) {
+        BookGridFragment bookGrid = new BookGridFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, bookGrid, Constants.BOOK_GRID).commit();
     }
 
     @Override
@@ -137,6 +145,6 @@ public class MainActivity extends AppCompatActivity
     private void displayHome() {
         mToolbarHome.setImageResource(R.drawable.ic_home_select);
         BookListsFragment bookLists = new BookListsFragment();
-        getSupportFragmentManager().beginTransaction().add(R.id.act_main_container, bookLists, Constants.BOOK_LISTS).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, bookLists, Constants.BOOK_LISTS).commit();
     }
 }
