@@ -57,7 +57,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     }
 
     private void registerUser(){
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.BASE_URL + Constants.USER_SIGN_UP_API,
+        StringRequest signUpRequest = new StringRequest(Request.Method.POST, Constants.BASE_URL + Constants.USER_SIGN_UP_API,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -108,8 +108,7 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
             }
         };
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+        SingletonRequestQueue.getInstance(ctx).addToRequestQueue(signUpRequest);
     }
 
     private void displayLoginPage(){

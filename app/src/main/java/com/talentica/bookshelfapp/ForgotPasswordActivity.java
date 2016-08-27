@@ -56,7 +56,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
             return;
         }
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+        StringRequest forgotPasswordRequest = new StringRequest(Request.Method.POST,
                 Constants.BASE_URL + Constants.USER_FORGOT_PWD_API + mEtEmail.getText().toString().trim(),
                 new Response.Listener<String>() {
                     @Override
@@ -85,8 +85,7 @@ public class ForgotPasswordActivity extends AppCompatActivity implements View.On
             }
         };
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+        SingletonRequestQueue.getInstance(ctx).addToRequestQueue(forgotPasswordRequest);
     }
 
     private void displayMessage(String response) {

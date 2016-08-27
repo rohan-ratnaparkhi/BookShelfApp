@@ -12,8 +12,11 @@ public class Constants {
     public static final String USER_FORGOT_PWD_API= "/authenticate/forgot-password/";
     public static final String ADD_BOOK_API = "/book";
     public static final String ALL_BOOKS_API = "/books";
-    public static final String RECENTLY_ADDED_API = "/book/reports/most-read";
-    public static final String MOST_READ_API = "/book/reports/most-read";
+//    TODO - check for recently and most read books api
+//    public static final String RECENTLY_ADDED_API = "/book/reports/most-read";
+//    public static final String MOST_READ_API = "/book/reports/most-read";
+    public static final String RECENTLY_ADDED_API = "/books?page=1";
+    public static final String MOST_READ_API = "/books?page=2";
     public static final String AUTH_PREPEND = "Bearer ";
     public static final String GET_BOOK_BY_ID = "/book/{id}";
     public static final String BORROW_BOOK_API = "/book/request/{id}";

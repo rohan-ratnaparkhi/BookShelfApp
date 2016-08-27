@@ -10,15 +10,12 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
-import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
 import com.talentica.bookshelfapp.adapter.BookListAdapter;
 import com.talentica.bookshelfapp.model.Book;
 
@@ -46,22 +43,21 @@ public class BookListsFragment extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        displayRecentlyAddedBooks();
+        displayBookListOfType("recent");
+        displayBookListOfType("most");
     }
 
-    private void displayRecentlyAddedBooks() {
-//        TODO - change url once recently added book api is working
+    private void displayBookListOfType(final String type) {
         try {
             JsonObjectRequest recentlyAddedRequest = new JsonObjectRequest(Request.Method.GET,
-                    Constants.BASE_URL + Constants.ALL_BOOKS_API,
+                    Constants.BASE_URL + getUrlForType(type),
                     null,
                     new Response.Listener<JSONObject>() {
                         @Override
                         public void onResponse(JSONObject response) {
                             Log.d("Rohan", "1: " + response.toString());
                             List<Book> bookList = ResponseUtil.createBooksListFromResponse(response);
-                            setAdapterForBooks(bookList);
-//                            displayMostReadBooksList(Constants.BASE_URL + Constants.ALL_BOOKS_API);
+                            setListAdapter(type, bookList);
                         }
                     },
                     new Response.ErrorListener() {
@@ -70,12 +66,6 @@ public class BookListsFragment extends Fragment {
                             Log.d("Rohan", error.toString());
                         }
                     }) {
-                @Override
-                protected Map<String, String> getParams() throws AuthFailureError {
-                    Map<String, String> params = new HashMap<String, String>();
-                    params.put(Constants.KEY_PAGE, "1");
-                    return params;
-                }
 
                 @Override
                 public Map<String, String> getHeaders() throws AuthFailureError {
@@ -91,11 +81,25 @@ public class BookListsFragment extends Fragment {
         }
     }
 
-    private void setAdapterForBooks(List<Book> bookList) {
+    private String getUrlForType(String type){
+        if(type.equalsIgnoreCase("recent")){
+            return Constants.RECENTLY_ADDED_API;
+        } else {
+            return Constants.MOST_READ_API;
+        }
+    }
+
+    private void setListAdapter(String type, List<Book> bookList){
+        RecyclerView rv;
         BookListAdapter adapter = new BookListAdapter(ctx, bookList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(ctx, LinearLayoutManager.HORIZONTAL, false);
-        RecyclerView rv = (RecyclerView) getView().findViewById(R.id.frg_book_list_rv_recently_added);
+        if(type.equalsIgnoreCase("recent")){
+            rv = (RecyclerView) getView().findViewById(R.id.frg_book_list_rv_recently_added);
+        } else{
+            rv = (RecyclerView) getView().findViewById(R.id.frg_book_list_rv_most_read);
+        }
         rv.setLayoutManager(mLayoutManager);
         rv.setAdapter(adapter);
     }
+
 }

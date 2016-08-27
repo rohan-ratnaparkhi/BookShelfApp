@@ -96,7 +96,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             return;
         }
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, Constants.BASE_URL + Constants.USER_LOGIN_API,
+        StringRequest loginRequest = new StringRequest(Request.Method.POST, Constants.BASE_URL + Constants.USER_LOGIN_API,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
@@ -135,8 +135,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         };
 
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+        SingletonRequestQueue.getInstance(ctx).addToRequestQueue(loginRequest);
     }
 
     private void checkForStoredUserAndLogin() {
