@@ -107,8 +107,7 @@ public class AddBookDetailsManuallyActivity extends AppCompatActivity implements
                     return headers;
                 }
             };
-            RequestQueue requestQueue = Volley.newRequestQueue(this);
-            requestQueue.add(saveBookRequest);
+            SingletonRequestQueue.getInstance(ctx).addToRequestQueue(saveBookRequest);
         }
     }
 

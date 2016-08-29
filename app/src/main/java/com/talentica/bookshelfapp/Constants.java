@@ -20,6 +20,8 @@ public class Constants {
     public static final String AUTH_PREPEND = "Bearer ";
     public static final String GET_BOOK_BY_ID = "/book/{id}";
     public static final String BORROW_BOOK_API = "/book/request/{id}";
+    public static final String BORROW_BOOK_ACCEPT_API = "/book/request/approve/{bookId}/{userId}";
+    public static final String BORROW_BOOK_REJECT_API = "/book/request/reject/{bookId}/{userId}";
 
 
 //    keys for json and internal usage

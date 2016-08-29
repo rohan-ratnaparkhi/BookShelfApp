@@ -11,6 +11,15 @@ public class Task {
     private String bookAuthor;
     private String bookRequestedBy;
     private String bookRequestedDate;
+    private String bookRequestedById;
+
+    public String getBookRequestedById() {
+        return bookRequestedById;
+    }
+
+    public void setBookRequestedById(String bookRequestedById) {
+        this.bookRequestedById = bookRequestedById;
+    }
 
     public String getTaskId() {
         return taskId;
