@@ -31,6 +31,7 @@ import java.util.Map;
 public class BookGridFragment extends Fragment implements AdapterView.OnItemClickListener {
 
     List<Book> bookList;
+    String mTag;
 
     @Nullable
     @Override
@@ -42,12 +43,21 @@ public class BookGridFragment extends Fragment implements AdapterView.OnItemClic
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-//        TODO - get books and display in grid view
         getAllBooks();
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+        Log.d(Constants.APP_TAG, "book clicked");
+        Intent displayDtls = new Intent(getContext(), BookDetailsActivity.class);
+        displayDtls.putExtra("bookId", bookList.get(i).getBookId());
+        startActivity(displayDtls);
     }
 
     private void getAllBooks() {
         try {
+//            TODO - check here which api to hit; get with respect to tags when api is working
+            Log.d("Rohan", "tag selected=" + this.mTag);
             JsonObjectRequest fetchAllBooks = new JsonObjectRequest(Request.Method.GET,
                     Constants.BASE_URL + Constants.ALL_BOOKS_API,
                     null,
@@ -85,11 +95,7 @@ public class BookGridFragment extends Fragment implements AdapterView.OnItemClic
         bookGrid.setOnItemClickListener(this);
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-        Log.d(Constants.APP_TAG, "book clicked");
-        Intent displayDtls = new Intent(getContext(), BookDetailsActivity.class);
-        displayDtls.putExtra("bookId", bookList.get(i).getBookId());
-        startActivity(displayDtls);
+    public void setmTag(String tag){
+        this.mTag = tag;
     }
 }

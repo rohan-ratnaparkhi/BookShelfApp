@@ -108,6 +108,7 @@ public class MainActivity extends AppCompatActivity
 
     private void displayBooksForCategory(MenuItem item) {
         BookGridFragment bookGrid = new BookGridFragment();
+        bookGrid.setmTag(item.getTitle().toString());
         getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, bookGrid, Constants.BOOK_GRID).commit();
     }
 
@@ -120,6 +121,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.toolbar_todo:
                 mToolbarTodo.setImageResource(R.drawable.ic_todo_select);
+                displayTasks();
                 break;
             case R.id.toolbar_add:
                 mToolbarAdd.setImageResource(R.drawable.ic_add_select);
@@ -132,6 +134,11 @@ public class MainActivity extends AppCompatActivity
                 mToolbarProfile.setImageResource(R.drawable.ic_profile_select);
                 break;
         }
+    }
+
+    private void displayTasks() {
+        TasksFragment taskFrg = new TasksFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, taskFrg, Constants.TASK_FRAGMENT).commit();
     }
 
     private void displayAddBook() {

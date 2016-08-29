@@ -95,4 +95,5 @@
     <string name="hint_name">Full Name</string>
     <string name="label_password">Password</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="text_requested_by">Requested By :&#160;</string>
 </resources>

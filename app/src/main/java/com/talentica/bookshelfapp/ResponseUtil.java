@@ -3,6 +3,7 @@ package com.talentica.bookshelfapp;
 import android.util.Log;
 
 import com.talentica.bookshelfapp.model.Book;
+import com.talentica.bookshelfapp.model.Task;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -41,5 +42,21 @@ public class ResponseUtil {
         }
 
         return list;
+    }
+
+
+    public static List<Task> createTaskListFromResponse(){
+        List<Task> taskList = new ArrayList<Task>();
+        for(int i = 0; i < 10; i ++){
+            Task task = new Task();
+            task.setBookAuthor("Author " + i);
+            task.setBookId("id"+i);
+            task.setBookImgUrl(Constants.TEMP_BOOK_IMG);
+            task.setBookTitle("Title " + i);
+            task.setBookRequestedBy("Rohan " + i);
+            task.setBookRequestedDate("25 Aug");
+            taskList.add(task);
+        }
+        return taskList;
     }
 }
