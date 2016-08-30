@@ -96,4 +96,5 @@
     <string name="label_password">Password</string>
     <string name="title_activity_main">MainActivity</string>
     <string name="text_requested_by">Requested By :&#160;</string>
+    <string name="text_on">&#160;on&#160;</string>
 </resources>

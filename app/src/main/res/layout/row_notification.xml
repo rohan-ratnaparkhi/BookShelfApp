@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:font="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/margin_15"
+    android:layout_marginLeft="@dimen/margin_10"
+    android:layout_marginRight="@dimen/margin_10"
+    android:layout_marginTop="@dimen/margin_15"
+    android:orientation="horizontal">
+
+    <ImageView
+        android:layout_width="80dp"
+        android:layout_height="120dp"
+        android:id="@+id/row_notification_img"
+        android:background="@color/hint_color" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="@dimen/margin_15"
+        android:orientation="vertical">
+
+        <com.talentica.bookshelfapp.widgets.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:id="@+id/row_notification_tv_title"
+            android:textColor="@color/normal_grey_text"
+            android:textSize="@dimen/text_size_16"
+            font:typeface="@string/font_medium" />
+
+        <com.talentica.bookshelfapp.widgets.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin_10"
+            android:text="Return due to/from"
+            android:id="@+id/row_notification_tv_to_or_from"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_size_14"
+            font:typeface="@string/font_regular" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.talentica.bookshelfapp.widgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="Person Name"
+                android:id="@+id/row_notification_tv_username"
+                android:textColor="@color/normal_grey_text"
+                android:textSize="@dimen/text_size_14"
+                font:typeface="@string/font_regular" />
+
+            <com.talentica.bookshelfapp.widgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="@string/text_on"
+                android:textColor="@color/normal_grey_text"
+                android:textSize="@dimen/text_size_14"
+                font:typeface="@string/font_regular" />
+
+            <com.talentica.bookshelfapp.widgets.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin_10"
+                android:text="10 May"
+                android:id="@+id/row_notification_tv_date"
+                android:textColor="@color/normal_grey_text"
+                android:textSize="@dimen/text_size_14"
+                font:typeface="@string/font_regular" />
+        </LinearLayout>
+
+        <com.talentica.bookshelfapp.widgets.CustomTextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/margin_10"
+            android:gravity="right"
+            android:text="10 May"
+            android:id="@+id/row_notification_tv_notification_date_time"
+            android:textColor="@color/hint_color"
+            android:textSize="@dimen/text_size_11"
+            font:typeface="@string/font_regular" />
+    </LinearLayout>
+</LinearLayout>

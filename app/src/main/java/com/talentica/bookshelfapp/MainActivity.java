@@ -129,11 +129,17 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.toolbar_notification:
                 mToolbarNotification.setImageResource(R.drawable.ic_notification_select);
+                displayNotifications();
                 break;
             case R.id.toolbar_profile:
                 mToolbarProfile.setImageResource(R.drawable.ic_profile_select);
                 break;
         }
+    }
+
+    private void displayNotifications() {
+        NotificationsFragment notificationFrg = new NotificationsFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, notificationFrg).commit();
     }
 
     private void displayTasks() {

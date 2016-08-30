@@ -5,14 +5,14 @@ package com.talentica.bookshelfapp;
  */
 public class Constants {
 
-//    API urls
+    //    API urls
     public static final String BASE_URL = "http://ec2-52-38-174-68.us-west-2.compute.amazonaws.com:3000/api";
     public static final String USER_LOGIN_API = "/authenticate/login";
     public static final String USER_SIGN_UP_API = "/user";
-    public static final String USER_FORGOT_PWD_API= "/authenticate/forgot-password/";
+    public static final String USER_FORGOT_PWD_API = "/authenticate/forgot-password/";
     public static final String ADD_BOOK_API = "/book";
     public static final String ALL_BOOKS_API = "/books";
-//    TODO - check for recently and most read books api
+    //    TODO - check for recently and most read books api
 //    public static final String RECENTLY_ADDED_API = "/book/reports/most-read";
 //    public static final String MOST_READ_API = "/book/reports/most-read";
     public static final String RECENTLY_ADDED_API = "/books?page=1";
@@ -24,7 +24,7 @@ public class Constants {
     public static final String BORROW_BOOK_REJECT_API = "/book/request/reject/{bookId}/{userId}";
 
 
-//    keys for json and internal usage
+    //    keys for json and internal usage
     public static final String KEY_USERNAME = "username";
     public static final String KEY_PASSWORD = "password";
     public static final String KEY_EMAIL = "email";
@@ -48,4 +48,7 @@ public class Constants {
     public static final String BOOK_GRID = "HomeBookGrid";
     public static final String ADD_BOOK_MAIN_FRAGMENT = "AddBookMain";
     public static final String TASK_FRAGMENT = "MyTasksFragment";
+    public static final String DUE_TO = "Return due to";
+    public static final String DUE_FROM = "Return due from";
+
 }

@@ -3,6 +3,7 @@ package com.talentica.bookshelfapp;
 import android.util.Log;
 
 import com.talentica.bookshelfapp.model.Book;
+import com.talentica.bookshelfapp.model.Notifications;
 import com.talentica.bookshelfapp.model.Task;
 
 import org.json.JSONArray;
@@ -60,5 +61,26 @@ public class ResponseUtil {
             taskList.add(task);
         }
         return taskList;
+    }
+
+    public static List<Notifications> createNotificationsListFromResponse(){
+//        TODO - get notifications from api response when available
+        List<Notifications> notificationsList = new ArrayList<Notifications>();
+        for(int i = 0; i < 10; i ++){
+            Notifications notification = new Notifications();
+            notification.setBookImg(Constants.TEMP_BOOK_IMG);
+            notification.setBookTitle("Title " + i);
+            if(i%3 == 0){
+                notification.setBorrower(true);
+                notification.setBorrowerName("Rohan" + i);
+            } else {
+                notification.setLender(true);
+                notification.setLenderName("Rohan" + i);
+            }
+            notification.setNotificationDateTime("10 hours ago");
+            notification.setReturnDate("10 May");
+            notificationsList.add(notification);
+        }
+        return notificationsList;
     }
 }
