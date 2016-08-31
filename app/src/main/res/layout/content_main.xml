@@ -54,13 +54,13 @@
             android:src="@drawable/ic_notification"
             android:background="@color/transparent"
             android:id="@+id/toolbar_notification"/>
-        <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:src="@drawable/ic_profile"
-            android:background="@color/transparent"
-            android:id="@+id/toolbar_profile"/>
+        <!--<ImageButton-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="1"-->
+            <!--android:src="@drawable/ic_profile"-->
+            <!--android:background="@color/transparent"-->
+            <!--android:id="@+id/toolbar_profile"/>-->
 
     </LinearLayout>
 

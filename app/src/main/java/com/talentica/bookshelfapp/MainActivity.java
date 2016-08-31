@@ -31,30 +31,19 @@ public class MainActivity extends AppCompatActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-
-        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
 
         mMainContainer = (LinearLayout) findViewById(R.id.act_main_container);
         mToolbarHome = (ImageButton) findViewById(R.id.toolbar_home);
         mToolbarTodo = (ImageButton) findViewById(R.id.toolbar_todo);
         mToolbarAdd = (ImageButton) findViewById(R.id.toolbar_add);
         mToolbarNotification = (ImageButton) findViewById(R.id.toolbar_notification);
-        mToolbarProfile = (ImageButton) findViewById(R.id.toolbar_profile);
+//        mToolbarProfile = (ImageButton) findViewById(R.id.toolbar_profile);
 
         mToolbarHome.setOnClickListener(this);
         mToolbarTodo.setOnClickListener(this);
         mToolbarAdd.setOnClickListener(this);
         mToolbarNotification.setOnClickListener(this);
-        mToolbarProfile.setOnClickListener(this);
+//        mToolbarProfile.setOnClickListener(this);
 
         displayHome();
 
@@ -131,25 +120,33 @@ public class MainActivity extends AppCompatActivity
                 mToolbarNotification.setImageResource(R.drawable.ic_notification_select);
                 displayNotifications();
                 break;
-            case R.id.toolbar_profile:
-                mToolbarProfile.setImageResource(R.drawable.ic_profile_select);
-                break;
+//            case R.id.toolbar_profile:
+//                mToolbarProfile.setImageResource(R.drawable.ic_profile_select);
+//                break;
         }
     }
 
     private void displayNotifications() {
         NotificationsFragment notificationFrg = new NotificationsFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, notificationFrg).commit();
+        displayToolbarWithTitle("Notifications");
     }
 
     private void displayTasks() {
         TasksFragment taskFrg = new TasksFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, taskFrg, Constants.TASK_FRAGMENT).commit();
+        displayToolbarWithTitle("My Tasks");
+    }
+
+    private void displayToolbarWithTitle(String title) {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        toolbar.setTitle(title);
     }
 
     private void displayAddBook() {
         AddBookMainFragment addBookMainFrg = new AddBookMainFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, addBookMainFrg, Constants.ADD_BOOK_MAIN_FRAGMENT).commit();
+        displayToolbarWithTitle("Add Book");
     }
 
     void resetToolbarIconsToDefault() {
@@ -157,12 +154,30 @@ public class MainActivity extends AppCompatActivity
         mToolbarTodo.setImageResource(R.drawable.ic_todo);
         mToolbarAdd.setImageResource(R.drawable.ic_add);
         mToolbarNotification.setImageResource(R.drawable.ic_notification);
-        mToolbarProfile.setImageResource(R.drawable.ic_profile);
+//        mToolbarProfile.setImageResource(R.drawable.ic_profile);
     }
 
     private void displayHome() {
         mToolbarHome.setImageResource(R.drawable.ic_home_select);
         BookListsFragment bookLists = new BookListsFragment();
         getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, bookLists, Constants.BOOK_LISTS).commit();
+        displayHomeToolbar();
     }
+
+    private void displayHomeToolbar() {
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        drawer.setDrawerListener(toggle);
+        toggle.syncState();
+
+        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+        displayToolbarWithTitle("Home");
+    }
+
+
 }

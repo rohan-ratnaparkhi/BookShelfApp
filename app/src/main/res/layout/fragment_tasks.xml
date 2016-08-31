@@ -10,7 +10,7 @@
         android:layout_height="wrap_content"
         android:padding="@dimen/padding_5"
         android:id="@+id/frg_tasks_tv_no_of_tasks"
-        android:text="My Tasks (10)" />
+        android:text="Pending Tasks (10)" />
 
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
