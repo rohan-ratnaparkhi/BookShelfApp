@@ -3,8 +3,10 @@
     xmlns:font="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:layout_margin="5dp">
+    android:paddingBottom="@dimen/margin_10"
+    android:paddingTop="@dimen/margin_10"
+    android:layout_marginLeft="@dimen/margin_10"
+    android:orientation="vertical">
 
     <ImageView
         android:id="@+id/item_home_list_img"
@@ -14,31 +16,31 @@
         android:background="@color/hint_color" />
 
     <com.talentica.bookshelfapp.widgets.CustomTextView
+        android:id="@+id/item_home_list_title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="Title"
         android:textColor="@color/normal_grey_text"
         android:textSize="@dimen/text_size_14"
-        android:id="@+id/item_home_list_title"
         font:typeface="@string/font_bold" />
 
     <com.talentica.bookshelfapp.widgets.CustomTextView
+        android:id="@+id/item_home_list_author"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="Author"
         android:textColor="@color/normal_grey_text"
         android:textSize="@dimen/text_size_12"
-        font:typeface="@string/font_regular"
-        android:id="@+id/item_home_list_author"/>
+        font:typeface="@string/font_regular" />
 
     <com.talentica.bookshelfapp.widgets.CustomTextView
+        android:id="@+id/item_home_list_lender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="Lender"
-        android:id="@+id/item_home_list_lender"
         android:textColor="@color/hint_color"
         android:textSize="@dimen/text_size_12"
         font:typeface="@string/font_regular" />
