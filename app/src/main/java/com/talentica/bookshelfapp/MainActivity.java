@@ -141,6 +141,7 @@ public class MainActivity extends AppCompatActivity
     private void displayToolbarWithTitle(String title) {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(title);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(false);
     }
 
     private void displayAddBook() {
@@ -176,7 +177,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        displayToolbarWithTitle("Home");
+        toolbar.setNavigationIcon(R.drawable.ic_category);
+
+//        displayToolbarWithTitle("Home");
     }
 
 
