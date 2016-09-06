@@ -51,4 +51,7 @@ public class Constants {
     public static final String DUE_TO = "Return due to";
     public static final String DUE_FROM = "Return due from";
 
+    public static final String MY_BOOKS = "My Books";
+    public static final String BOOKS_BORROWED = "Books I Borrowed";
+    public static final String USER_PROFILE = "Profile";
 }

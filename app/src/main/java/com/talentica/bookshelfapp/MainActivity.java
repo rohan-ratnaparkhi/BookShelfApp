@@ -44,13 +44,13 @@ public class MainActivity extends AppCompatActivity
         mToolbarTodo = (ImageButton) findViewById(R.id.toolbar_todo);
         mToolbarAdd = (ImageButton) findViewById(R.id.toolbar_add);
         mToolbarNotification = (ImageButton) findViewById(R.id.toolbar_notification);
-//        mToolbarProfile = (ImageButton) findViewById(R.id.toolbar_profile);
+        mToolbarProfile = (ImageButton) findViewById(R.id.toolbar_profile);
 
         mToolbarHome.setOnClickListener(this);
         mToolbarTodo.setOnClickListener(this);
         mToolbarAdd.setOnClickListener(this);
         mToolbarNotification.setOnClickListener(this);
-//        mToolbarProfile.setOnClickListener(this);
+        mToolbarProfile.setOnClickListener(this);
 
         displayHome();
 
@@ -137,10 +137,17 @@ public class MainActivity extends AppCompatActivity
                 mToolbarNotification.setImageResource(R.drawable.ic_notification_select);
                 displayNotifications();
                 break;
-//            case R.id.toolbar_profile:
-//                mToolbarProfile.setImageResource(R.drawable.ic_profile_select);
-//                break;
+            case R.id.toolbar_profile:
+                mToolbarProfile.setImageResource(R.drawable.ic_profile_select);
+                displayMyAccounts();
+                break;
         }
+    }
+
+    private void displayMyAccounts() {
+        MyAccountsFragment myAccountFrg = new MyAccountsFragment();
+        getSupportFragmentManager().beginTransaction().replace(R.id.act_main_container, myAccountFrg).commit();
+        displayToolbarWithTitle("My Account");
     }
 
     private void displayNotifications() {
@@ -173,7 +180,7 @@ public class MainActivity extends AppCompatActivity
         mToolbarTodo.setImageResource(R.drawable.ic_todo);
         mToolbarAdd.setImageResource(R.drawable.ic_add);
         mToolbarNotification.setImageResource(R.drawable.ic_notification);
-//        mToolbarProfile.setImageResource(R.drawable.ic_profile);
+        mToolbarProfile.setImageResource(R.drawable.ic_profile);
     }
 
     private void displayHome() {
