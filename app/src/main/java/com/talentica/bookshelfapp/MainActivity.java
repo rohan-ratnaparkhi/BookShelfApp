@@ -1,8 +1,12 @@
 package com.talentica.bookshelfapp;
 
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.SearchView;
 import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -15,6 +19,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 
 public class MainActivity extends AppCompatActivity
@@ -27,12 +32,13 @@ public class MainActivity extends AppCompatActivity
     ImageButton mToolbarProfile;
     LinearLayout mMainContainer;
     Menu mainMenu;
+    Context ctx;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        ctx = this;
         mMainContainer = (LinearLayout) findViewById(R.id.act_main_container);
         mToolbarHome = (ImageButton) findViewById(R.id.toolbar_home);
         mToolbarTodo = (ImageButton) findViewById(R.id.toolbar_todo);
@@ -47,6 +53,12 @@ public class MainActivity extends AppCompatActivity
 //        mToolbarProfile.setOnClickListener(this);
 
         displayHome();
+
+        Intent searchIntent = getIntent();
+        if (Intent.ACTION_SEARCH.equalsIgnoreCase(searchIntent.getAction())) {
+            String qry = searchIntent.getStringExtra(SearchManager.QUERY);
+            Toast.makeText(ctx, "hello there: " + qry, Toast.LENGTH_LONG).show();
+        }
 
     }
 
@@ -65,6 +77,9 @@ public class MainActivity extends AppCompatActivity
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
         mainMenu = menu;
+        SearchView searchView = (SearchView) menu.findItem(R.id.book_search).getActionView();
+        SearchManager searchManager = (SearchManager) getSystemService(SEARCH_SERVICE);
+        searchView.setSearchableInfo(searchManager.getSearchableInfo(getComponentName()));
         return true;
     }
 
