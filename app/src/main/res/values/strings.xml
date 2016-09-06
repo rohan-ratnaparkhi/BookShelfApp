@@ -99,4 +99,6 @@
     <string name="text_on">&#160;on&#160;</string>
     <string name="text_confirmation">Confirmation!</string>
     <string name="book_borrow_confirm_text">Are you sure you want to request for this book?</string>
+    <string name="hint_search">Search Book Name</string>
+    <string name="search">Search Book Name, Author</string>
 </resources>
