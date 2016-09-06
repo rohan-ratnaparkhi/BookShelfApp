@@ -108,10 +108,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 user.setUserPassword(mEtPassword.getText().toString());
                                 user.setUserToken(res.getString("data"));
                                 StoredUser.storeUser(ctx, user);
+                                displayHomePage();
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-                            displayHomePage();
+
                         } else {
                             CommonUtil.displayErrorMsg(ctx, Constants.ERROR_OCCURRED);
                         }

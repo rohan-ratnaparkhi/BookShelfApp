@@ -26,6 +26,7 @@ public class MainActivity extends AppCompatActivity
     ImageButton mToolbarNotification;
     ImageButton mToolbarProfile;
     LinearLayout mMainContainer;
+    Menu mainMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.main, menu);
+        mainMenu = menu;
         return true;
     }
 
@@ -142,6 +144,7 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         toolbar.setTitle(title);
         getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        mainMenu.findItem(R.id.book_search).setVisible(false);
     }
 
     private void displayAddBook() {

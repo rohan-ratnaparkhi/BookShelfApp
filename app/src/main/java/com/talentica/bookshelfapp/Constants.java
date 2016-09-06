@@ -31,7 +31,7 @@ public class Constants {
     public static final String KEY_USER_ID = "_id";
     public static final String KEY_ROLES = "roles";
     public static final String USER_TOKEN = "uToken";
-    public static final String APP_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI1NzE3NjkwYTI2ZTRlNjQ2MmY5NWExZGUiLCJpYXQiOjE0NzIxOTYzOTksImV4cCI6MTQ3MjI4Mjc5OSwiaXNzIjoiZWMyLTUyLTM4LTE3NC02OC51cy13ZXN0LTIuY29tcHV0ZS5hbWF6b25hd3MuY29tIn0.ctEFqJvqRhBhiu4qwltUMQg3F947TlZfp_NjeAAyv8I";
+    public static final String APP_TOKEN = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VySWQiOiI1NzE3NjkwYTI2ZTRlNjQ2MmY5NWExZGUiLCJpYXQiOjE0NzMxNTk4NTQsImV4cCI6MTQ3MzI0NjI1NCwiaXNzIjoiZWMyLTUyLTM4LTE3NC02OC51cy13ZXN0LTIuY29tcHV0ZS5hbWF6b25hd3MuY29tIn0.JxjwjIZ1RbfI0w1cWMo995M2BGXQdY6hHxvBNwX7ACQ";
     public static final String KEY_PAGE = "page";
     public static final String KEY_LIMIT = "limit";
     public static final String KEY_AUTHORIZATION = "Authorization";

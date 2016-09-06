@@ -27,8 +27,7 @@
                     android:layout_width="185dp"
                     android:layout_height="254dp"
                     android:layout_gravity="center_horizontal"
-                    android:layout_marginTop="20dp"
-                    android:background="@color/gradient_end_login" />
+                    android:layout_marginTop="20dp" />
 
                 <com.talentica.bookshelfapp.widgets.CustomTextView
                     android:id="@+id/act_book_dtls_tv_title"
